@@ -11,15 +11,10 @@ jobs:
         steps:
             - uses: actions/setup-node@master
               with:
-                  node-version: 16
-            # If you edit the .js files and want to run them in your GitHub Action, you need to:
-            # - uncomment the 2 following lines
-            # - replace "npx github-stats-box@1" with "npm start"
-            # N.B: Your action will not receive future updates if you do so
-
-            # - uses: actions/checkout@master
-            # - run: npm ci
-            - run: npx github-stats-box@1
+                  node-version: 20
+            - uses: actions/checkout@master
+            - run: npm ci
+            - run: npm start
               env:
                   GH_TOKEN: ${{ secrets.GH_TOKEN }} # Do not edit, defined in secrets
                   # Edit the following environment variables
