@@ -31,6 +31,10 @@ const userInfoFetcher = (token) => {
                       stargazers {
                         totalCount
                       }
+                      forkCount
+                      watchers {
+                        totalCount
+                      }
                     }
                   }
                 }
