@@ -78,13 +78,13 @@ async function updateGist(stats) {
       ['🍴', `Forks`, humanize(stats.totalForks)],
       ['👀', `Watchers`, humanize(stats.totalWatchers)],
       ['➕', `Commits`, humanize(stats.totalCommits)],
-    //   ['🔀', `PRs`, humanize(stats.totalPRs)],
-    //   ['🚩', `Issues`, humanize(stats.totalIssues)],
+      //   ['🔀', `PRs`, humanize(stats.totalPRs)],
+      //   ['🚩', `Issues`, humanize(stats.totalIssues)],
     ]
       .map((content) => {
         let line = `${content[1]}:${content[2]}`
-        line = line.replace(':', ':' + ' '.repeat(45 - line.length))
-        line = `${content[0]}    ${line}`
+        line = line.replace(':', ' '.repeat(45 - line.length))
+        line = `${content[0]} ${line}`
         return line
       })
       .join('\n') + '\n'
